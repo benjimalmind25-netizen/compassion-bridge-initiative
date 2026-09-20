@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en"><head><style id="qw-theme">:root {
+  --color-bg: #ede4d0;
+  --color-text: #2c2418;
+  --color-navbar-bg: #e4dac4;
+  --color-bg-chat-view: #f4ecda;
+  --color-bg-secondary: #f7efdd;
+  --color-bg-tertiary: #e4dac4;
+  --color-bg-hover: #dbd0b8;
+  --color-surface: #e4dac4;
+  --color-surface-hover: #dbd0b8;
+  --color-surface-active: #d0c4aa;
+  --color-border: #cbbfa5;
+  --color-border-light: #ddd3bc;
+  --color-border-strong: #b5a78c;
+  --color-primary: #7a5030;
+  --color-primary-dark: #5e3d24;
+  --color-primary-light: #8b5e3c;
+  --color-primary-bg: #7a50300f;
+  --color-primary-hover-border: #5e3d24;
+  --color-nav-icon-active: #7a5030;
+  --color-nav-hover-border: #7a5030;
+  --color-primary-alpha-3: color-mix(in srgb, #7a5030 3%, transparent);
+  --color-primary-alpha-5: color-mix(in srgb, #7a5030 5%, transparent);
+  --color-primary-alpha-8: color-mix(in srgb, #7a5030 8%, transparent);
+  --color-primary-alpha-12: color-mix(in srgb, #7a5030 12%, transparent);
+  --color-primary-alpha-15: color-mix(in srgb, #7a5030 15%, transparent);
+  --color-primary-alpha-20: color-mix(in srgb, #7a5030 20%, transparent);
+  --color-primary-alpha-25: color-mix(in srgb, #7a5030 25%, transparent);
+  --color-primary-alpha-30: color-mix(in srgb, #7a5030 30%, transparent);
+  --color-primary-alpha-40: color-mix(in srgb, #7a5030 40%, transparent);
+  --color-primary-alpha-50: color-mix(in srgb, #7a5030 50%, transparent);
+  --color-primary-alpha-60: color-mix(in srgb, #7a5030 60%, transparent);
+  --color-primary-subtle: color-mix(in srgb, #7a5030 8%, transparent);
+  --color-primary-border: color-mix(in srgb, #7a5030 22%, transparent);
+  --color-focus-ring: color-mix(in srgb, #7a5030 35%, transparent);
+  --color-sidebar-hover: #5a462d0f;
+  --block-hover-outline: 1px dashed color-mix(in srgb, #7a5030 50%, transparent);
+  --block-selected-outline: 1px solid #8b5e3c;
+  --block-selection-outline-offset: 2px;
+  --block-selected-halo: 0 0 8px color-mix(in srgb, #7a5030 40%, transparent);
+  --color-accent: #7a5030;
+  --color-accent-foreground: #6b4528;
+  --color-accent-dark: #5e3d24;
+  --color-accent-light: #7a50300f;
+  --color-accent-inverse: #f7f0e0;
+  --color-link: #6b4528;
+  --color-primary-gradient-end: #7a50300a;
+  --color-primary-bg-solid: #f4ecda;
+  --color-user-bubble: #e8dfc8;
+  --color-user-bubble-text: #2c2418;
+  --color-text-secondary: #4a3f32;
+  --color-text-tertiary: #8a7e6e;
+  --color-text-muted: #918474;
+  --color-text-on-primary: #f7f0e0;
+  --color-success: #6b8a00;
+  --color-success-dark: #4a6000;
+  --color-success-light: #eaf0d0;
+  --color-success-hover: #5a7500;
+  --color-success-bg: #eaedce;
+  --color-success-border: #d4daa8;
+  --color-success-foreground: #6b8a00;
+  --color-success-dark-foreground: #4a6000;
+  --color-success-text: #4a6000;
+  --color-error: #c43e2a;
+  --color-error-dark: #962e1f;
+  --color-error-light: #fce4df;
+  --color-error-hover: #fce4df;
+  --color-error-bg: #f6e8de;
+  --color-error-border: #eecfc4;
+  --color-error-active-border: #c43e2a;
+  --color-error-foreground: #c43e2a;
+  --color-error-dark-foreground: #962e1f;
+  --color-error-inverse: #f7f0e0;
+  --color-error-text: #962e1f;
+  --color-warning: #a07800;
+  --color-warning-dark: #6e5200;
+  --color-warning-light: #f8edc5;
+  --color-warning-hover: #8a6800;
+  --color-warning-bg: #f9f0da;
+  --color-warning-border: #eddcaa;
+  --color-warning-foreground: #a07800;
+  --color-warning-dark-foreground: #6e5200;
+  --color-warning-inverse: #6e5200;
+  --color-surface-warning: #f8edc5;
+  --color-text-warning: #6e5200;
+  --color-info: #4a7fa0;
+  --color-info-dark: #35607a;
+  --color-info-light: #dce9f0;
+  --color-info-hover: #3d6d8a;
+  --color-info-bg: #eaecdf;
+  --color-info-border: #d4dcc8;
+  --color-info-foreground: #4a7fa0;
+  --color-info-dark-foreground: #35607a;
+  --color-info-inverse: #f7f0e0;
+  --color-overlay: #2c241873;
+  --color-shadow: #2c24181a;
+  --color-hover: #2c24180a;
+  --color-tooltip-bg: #2c2418;
+  --color-tooltip-text: #f7f0e0;
+  --color-voice-purple: #6c71c4;
+  --color-voice-purple-dark: #4a4e99;
+  --color-voice-purple-light: #6c71c4;
+  --color-voice-red: #c43e2a;
+  --color-voice-red-dark: #962e1f;
+  --color-voice-amber: #a07800;
+  --color-voice-purple-glow: #6c71c459;
+  --color-voice-red-glow: #c43e2a59;
+  --font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "SF Mono", "Monaco", "Menlo", "Consolas", monospace;
+  --text-2xs: .5625rem;
+  --text-xs: .625rem;
+  --text-sm: .6875rem;
+  --text-base: .75rem;
+  --text-md: .8125rem;
+  --text-lg: .875rem;
+  --text-xl: 1rem;
+  --text-2xl: 1.125rem;
+  --text-3xl: 1.25rem;
+  --text-4xl: 1.5rem;
+  --text-5xl: 2rem;
+  --spacing-1: calc(.25rem * 1);
+  --spacing-1-5: calc(.25rem * 1.5);
+  --spacing-2: calc(.25rem * 2);
+  --spacing-3: calc(.25rem * 3);
+  --spacing-4: calc(.25rem * 4);
+  --spacing-5: calc(.25rem * 5);
+  --spacing-6: calc(.25rem * 6);
+  --spacing-7: calc(.25rem * 7);
+  --spacing-8: calc(.25rem * 8);
+  --spacing-9: calc(.25rem * 9);
+  --spacing-10: calc(.25rem * 10);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-card: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 8px;
+  --shadow-sm: 0 1px 3px #2c241812;
+  --shadow-md: 0 4px 14px #2c24181c;
+  --color-success-bg-solid: #eaf0d0;
+  --color-error-bg-solid: #fce4df;
+  --color-error-border-solid: #fce4df;
+  --color-warning-bg-solid: #f8edc5;
+  --color-warning-text: #4a3200;
+  --color-info-bg-solid: #dce9f0;
+  --color-info-bg-solid-alt: #dce9f0;
+  --color-info-text: #35607a;
+  --color-info-text-alt: #35607a;
+  --color-emerald: #6b8a00;
+  --color-teal: #4a7fa0;
+  --color-code-bg: #e4dac4;
+  --color-code-header-bg: #dbd0b8;
+  --color-code-text: #2c2418;
+  --color-code-border: #cbbfa5;
+  --color-code-muted: #918474;
+  --color-inline-code-bg: #e4dac4;
+  --color-inline-code-text: #4a3f32;
+  --color-inline-code-border: #cbbfa5;
+  --color-scrollbar-thumb: #b5a78c;
+  --color-scrollbar-track: transparent;
+  --color-graph-node-text: #2c2418;
+  --color-graph-node-text-dim: #918474;
+  --color-graph-edge-default: #b5a78c;
+  --color-graph-edge-cross: #cb4b16;
+  --color-graph-edge-text: #4a3f32;
+  --color-graph-edge-stroke: #f7f0e0;
+  --color-graph-highlight-bg: #c43e2a;
+  --color-graph-highlight-border: #962e1f;
+  --color-graph-search-bg: #a07800;
+  --color-graph-search-border: #8a6800;
+  --color-graph-focus-border: #c43e2a;
+  --color-graph-external-border: #b5a78c;
+  --color-graph-cat-file: #4a7fa0;
+  --color-graph-cat-folder: #8a7e6e;
+  --color-graph-cat-file-aggregate: #35607a;
+  --color-graph-cat-class: #6c71c4;
+  --color-graph-cat-function: #6b8a00;
+  --color-graph-cat-method: #8b5e3c;
+  --color-graph-cat-variable: #a07800;
+  --color-graph-cat-import: #cb4b16;
+  --color-graph-cat-module: #6c71c4;
+  --color-graph-cat-concept: #c43e2a;
+  --color-graph-cat-person: #b84a7a;
+  --color-graph-cat-org: #8b5e3c;
+  --color-graph-cat-organization: #8b5e3c;
+  --color-graph-cat-product: #6c71c4;
+  --color-graph-cat-metric: #b84a7a;
+  --color-graph-cat-location: #4a3f32;
+  --color-graph-cat-date: #b84a7a;
+  --color-graph-cat-code: #4a7fa0;
+  --color-graph-cat-doc: #8a7e6e;
+  --color-graph-cat-url: #8b5e3c;
+  --color-graph-cat-email: #6c71c4;
+  --color-graph-cat-unknown: #b5a78c;
+  --color-graph-rel-contains: #b5a78c;
+  --color-graph-rel-extends: #6c71c4;
+  --color-graph-rel-implements: #4a7fa0;
+  --color-graph-rel-imports: #cb4b16;
+  --color-graph-rel-uses: #6b8a00;
+  --color-graph-rel-calls: #6b8a00;
+  --color-graph-rel-references: #a07800;
+  --color-graph-rel-related-to: #b5a78c;
+  --color-graph-rel-works-on: #c43e2a;
+  --color-graph-rel-owns: #8b5e3c;
+  --color-graph-rel-depends-on: #cb4b16;
+  --color-graph-rel-parent-of: #b5a78c;
+  --qs-content: #fff;
+  --qs-main: #fff;
+  --qs-primary-foreground: #131920;
+  --qs-secondary-foreground: #656871;
+  --qs-tertiary-foreground: #918474;
+  --qs-placeholder-foreground: #8c8c94;
+  --qs-divider: #dedee3;
+  --qs-default-border: #8c8c94;
+  --qs-neutral-soft: #b4b4bb;
+  --qs-neutral-gray-50: #e4dac4;
+  --qs-tertiary-background: #e4dac4;
+  --qs-action-hover: #f3f3f7;
+  --qs-primary-default: #4200db;
+  --qs-primary-dark: #35009e;
+  --qs-primary-light: #e8e6ff;
+  --qs-success-default: #00802f;
+  --qs-error-default: #db0000;
+  --qs-font-sans: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --safe-top: 0px;
+  --safe-bottom: 0px;
+  --safe-left: 0px;
+  --safe-right: 0px;
+  --qs-font-family: "Amazon Ember", "Helvetica Neue", "Segoe UI", Helvetica, Arial, sans-serif;
+  --qs-font-base-letter-spacing: .15px;
+  --qs-shadow-sm: 0 0 2px 0 #00000029, 0 0 4px 0 #00000029;
+  --qs-shadow-md: 0 0 2px 0 #00000029, 0 2px 8px 1px #00000029;
+  --qs-shadow-lg: 0 4px 16px 4px #00000029, 0 2px 6px 1px #00000029;
+  --qs-shadow-xl: 0 4px 8px 2px #00000029, 0 6px 20px 4px #00000029;
+  --qs-width-modal-sm: 384px;
+  --qs-width-modal-md: 600px;
+  --qs-width-modal-lg: 1136px;
+  --qs-grid-gap: 16px;
+  --qs-grid-gap-xl: 24px;
+  --qs-primary-medium: #8575ff;
+  --qs-primary-inverse: #fff;
+  --qs-neutral-lightest: #f9f9fb;
+  --qs-neutral-light: #f3f3f7;
+  --qs-neutral-default: #dedee3;
+  --qs-neutral-medium: #8c8c94;
+  --qs-neutral-deep: #656871;
+  --qs-neutral-dark: #333843;
+  --qs-neutral-strong: #131920;
+  --qs-neutral-white: #fff;
+  --qs-neutral-black: #000;
+  --qs-success-medium: #005c26;
+  --qs-success-dark: #00471e;
+  --qs-success-light: #d9ffd6;
+  --qs-success-inverse: #fff;
+  --qs-info-default: #006ce0;
+  --qs-info-medium: #003b8f;
+  --qs-info-dark: #002a66;
+  --qs-info-light: #d1f1ff;
+  --qs-info-inverse: #fff;
+  --qs-warning-default: #f2b100;
+  --qs-warning-medium: #db9200;
+  --qs-warning-dark: #573a00;
+  --qs-warning-light: #fffbbd;
+  --qs-warning-inverse: #573a00;
+  --qs-warning-experimental: #f2b100;
+  --qs-warning-experimental-light: #fffbbd;
+  --qs-warning-experimental-light-foreground: #fffbbd;
+  --qs-error-medium: #900;
+  --qs-error-dark: #700000;
+  --qs-error-light: #ffe0e0;
+  --qs-error-inverse: #fff;
+  --qs-connection-default: #db3300;
+  --qs-connection-soft: #ff997a;
+  --qs-connection-light: #ffe0d6;
+  --qs-connection-dark: #661800;
+  --qs-automation-default: #b3008f;
+  --qs-automation-medium: #d600ba;
+  --qs-automation-soft: #ff94f1;
+  --qs-automation-light: #ffe0fb;
+  --qs-automation-dark: #660052;
+  --qs-insight-default: #a000b8;
+  --qs-insight-soft: #f299ff;
+  --qs-insight-light: #fce6ff;
+  --qs-insight-dark: #590066;
+  --qs-visualization-default: #7300e5;
+  --qs-visualization-soft: #d4a8ff;
+  --qs-visualization-light: #f2e5ff;
+  --qs-visualization-dark: #45008a;
+  --qs-spice: #ff9800;
+  --qs-coachmark: #006ce0;
+  --qs-brand: #fff;
+  --qs-brand-foreground: #131920;
+  --qs-brand-navbar: #131920;
+  --qs-brand-navbar-foreground: #fff;
+  --qs-brand-navbar-light: #dedee3;
+  --qs-brand-navbar-dark: #000;
+  --qs-application-navbar: #4200db;
+  --qs-application-navbar-foreground: #fff;
+  --qs-application-navbar-light: #e8e6ff;
+  --qs-application-navbar-dark: #35009e;
+  --qs-dimension: #4200db;
+  --qs-dimension-foreground: #fff;
+  --qs-dimension-experimental: #4200db;
+  --qs-dimension-experimental-foreground: #4200db;
+  --qs-measure: #00802f;
+  --qs-measure-foreground: #fff;
+  --qs-measure-experimental: #f2b100;
+  --qs-measure-experimental-foreground: #f2b100;
+  --qs-content-inverse: #333843;
+  --qs-content-inverse-active: #131920;
+  --qs-secondary: #dedee3;
+  --qs-disabled: #8c8c94;
+  --qs-divider-light: #f3f3f7;
+  --qs-hover-border: #333843;
+  --qs-active-border: #4200db;
+  --qs-disabled-border: #dedee3;
+  --qs-error-border: #ffe0e0;
+  --qs-error-active-border: #db0000;
+  --qs-disabled-foreground: #b4b4bb;
+  --qs-primary-inverse-foreground: #fff;
+  --qs-error-foreground: #db0000;
+  --qs-contrast-foreground: #131920;
+  --qs-main-foreground: #131920;
+  --qs-main-secondary-foreground: #656871;
+  --qs-action-disabled: #f3f3f7;
+  --qs-action-active: #e8e6ff;
+  --qs-default-badge: #dedee3;
+  --qs-tag-default: #dedee3;
+  --qs-tag-soft-border: #b4b4bb;
+  --qs-focus-offset: 1px;
+  --qs-toggle-tile-sm: calc(.25rem * 8);
+  --qs-toggle-tile-md: calc(.25rem * 12);
+  --qs-toggle-tile-lg: calc(.25rem * 15);
+  --qs-shadow-pin-right: inset 4px 0 4px -4px #00000029;
+  --qs-shadow-pin-left: inset -4px 0 4px -4px #00000029;
+  --react-pdf-text-layer: 1;
+  --highlight-bg-color: #b400aa;
+  --highlight-selected-bg-color: #006400;
+  --react-pdf-annotation-layer: 1;
+  --annotation-unfocused-field-background: url("data:image/svg+xml;charset=UTF-8,<svg width='1px' height='1px' xmlns='http://www.w3.org/2000/svg'><rect width='100%' height='100%' style='fill:rgba(0, 54, 255, 0.13);'/></svg>");
+  --input-focus-border-color: Highlight;
+  --input-focus-outline: 1px solid Canvas;
+  --input-unfocused-border-color: transparent;
+  --input-disabled-border-color: transparent;
+  --input-hover-border-color: black;
+  --link-outline: none;
+  color-scheme: light;
+}
+body { background: var(--color-bg); color: var(--color-text); }
+a { color: var(--color-link, var(--color-primary)); }</style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compassion Bridge Initiative</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --cbi-navy: #1a2744;
+  --cbi-blue: #2563eb;
+  --cbi-blue-light: #3b82f6;
+  --cbi-teal: #0d9488;
+  --cbi-gold: #f59e0b;
+  --cbi-white: #ffffff;
+  --cbi-gray-50: #f8fafc;
+  --cbi-gray-100: #f1f5f9;
+  --cbi-gray-200: #e2e8f0;
+  --cbi-gray-300: #cbd5e1;
+  --cbi-gray-500: #64748b;
+  --cbi-gray-600: #475569;
+  --cbi-gray-700: #334155;
+  --cbi-gray-800: #1e293b;
+  --cbi-green: #10b981;
+  --cbi-red: #ef4444;
+  --font: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+}
+* { margin:0; padding:0; box-sizing: border-box; }
+body { font-family: var(--font); color: var(--cbi-gray-800); background: var(--cbi-white); line-height: 1.6; overflow-x: hidden; }
+
+/* ====== NAV ====== */
+nav { position: fixed; top:0; left:0; right:0; z-index:100; background: rgba(26,39,68,0.95); backdrop-filter: blur(12px); padding: 0 32px; display: flex; align-items: center; justify-content: space-between; height: 64px; }
+nav .logo { display: flex; align-items: center; gap: 10px; color: var(--cbi-white); font-size: 18px; font-weight: 700; letter-spacing: -0.3px; }
+nav .logo i { color: var(--cbi-gold); font-size: 22px; }
+nav ul { list-style:none; display:flex; gap:28px; }
+nav ul li a { color: rgba(255,255,255,0.8); text-decoration:none; font-size:14px; font-weight:500; transition: color 0.2s; }
+nav ul li a:hover { color: var(--cbi-white); }
+nav .donate-btn { background: var(--cbi-gold); color: var(--cbi-navy); padding: 8px 22px; border-radius: 100px; font-weight: 700; font-size: 14px; text-decoration: none; transition: all 0.2s; }
+nav .donate-btn:hover { background: #fbbf24; transform: translateY(-1px); }
+
+/* ====== HERO ====== */
+.hero { position: relative; min-height: 600px; display: flex; align-items: center; background: linear-gradient(135deg, var(--cbi-navy) 0%, #0f172a 60%, var(--cbi-teal) 100%); padding: 120px 48px 80px; overflow: hidden; }
+.hero::before { content:''; position:absolute; top:0;left:0;right:0;bottom:0; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
+.hero-content { position: relative; max-width: 680px; z-index:1; }
+.hero h1 { font-size: 48px; font-weight: 800; color: var(--cbi-white); line-height: 1.15; margin-bottom: 20px; letter-spacing: -1px; }
+.hero h1 span { color: var(--cbi-gold); }
+.hero p { font-size: 18px; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 32px; }
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 8px; background: var(--cbi-gold); color: var(--cbi-navy); padding: 14px 32px; border-radius: 100px; font-weight: 700; font-size: 16px; text-decoration:none; transition: all 0.2s; border: none; cursor:pointer; }
+.btn-primary:hover { background: #fbbf24; transform: translateY(-2px); box-shadow: 0 4px 20px rgba(245,158,11,0.4); }
+.btn-secondary { display: inline-flex; align-items: center; gap: 8px; background: transparent; color: var(--cbi-white); padding: 14px 32px; border-radius: 100px; font-weight: 600; font-size: 16px; text-decoration:none; border: 2px solid rgba(255,255,255,0.3); transition: all 0.2s; }
+.btn-secondary:hover { border-color: var(--cbi-white); background: rgba(255,255,255,0.1); }
+.hero-stats { position: relative; z-index:1; display:flex; gap:48px; margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1); }
+.hero-stat .num { font-size: 32px; font-weight: 800; color: var(--cbi-gold); }
+.hero-stat .label { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 2px; }
+
+/* ====== SECTION LAYOUT ====== */
+section { padding: 80px 48px; }
+.section-header { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.section-header .tag { display: inline-block; background: rgba(37,99,235,0.1); color: var(--cbi-blue); font-size: 12px; font-weight: 700; padding: 4px 14px; border-radius: 100px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.08em; }
+.section-header h2 { font-size: 34px; font-weight: 800; color: var(--cbi-navy); line-height: 1.2; margin-bottom: 12px; letter-spacing: -0.5px; }
+.section-header p { color: var(--cbi-gray-500); font-size: 16px; }
+
+/* ====== MISSION / WHAT WE DO ====== */
+.mission { background: var(--cbi-gray-50); }
+.cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.card { background: var(--cbi-white); border: 1px solid var(--cbi-gray-200); border-radius: var(--radius); padding: 32px 28px; transition: all 0.25s; }
+.card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+.card .icon-wrap { width: 52px; height: 52px; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 18px; }
+.card .icon-wrap.blue { background: rgba(37,99,235,0.1); color: var(--cbi-blue); }
+.card .icon-wrap.teal { background: rgba(13,148,136,0.1); color: var(--cbi-teal); }
+.card .icon-wrap.gold { background: rgba(245,158,11,0.1); color: var(--cbi-gold); }
+.card h3 { font-size: 18px; font-weight: 700; color: var(--cbi-navy); margin-bottom: 10px; }
+.card p { font-size: 14px; color: var(--cbi-gray-500); line-height: 1.7; }
+
+/* ====== APPROACH ====== */
+.approach-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.approach-item { display: flex; gap: 16px; padding: 24px; background: var(--cbi-white); border: 1px solid var(--cbi-gray-200); border-radius: var(--radius); }
+.approach-item .num { font-size: 28px; font-weight: 800; color: var(--cbi-blue); opacity: 0.3; flex-shrink:0; }
+.approach-item h4 { font-size: 16px; font-weight: 700; color: var(--cbi-navy); margin-bottom: 6px; }
+.approach-item p { font-size: 13px; color: var(--cbi-gray-500); line-height: 1.6; }
+
+/* ====== DONATION ====== */
+.donate-section { background: linear-gradient(135deg, var(--cbi-navy), #0f172a); color: var(--cbi-white); }
+.donate-wrapper { display: grid; grid-template-columns: 1fr 400px; gap: 48px; max-width: 1100px; margin: 0 auto; align-items: start; }
+.donate-info h2 { font-size: 34px; font-weight: 800; color: var(--cbi-white); margin-bottom: 16px; }
+.donate-info p { color: rgba(255,255,255,0.7); margin-bottom: 24px; font-size: 16px; }
+.qr-box { text-align: center; background: var(--cbi-white); border-radius: var(--radius); padding: 28px; margin-bottom: 24px; }
+.qr-box canvas { border-radius: 8px; }
+.qr-box p { color: var(--cbi-gray-500); font-size: 12px; margin-top: 10px; }
+.payment-methods { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.payment-methods span { background: rgba(255,255,255,0.1); padding: 6px 14px; border-radius: 100px; font-size: 12px; color: rgba(255,255,255,0.7); display: flex; align-items: center; gap: 6px; }
+
+/* Donate Form Card */
+.donate-card { background: var(--cbi-white); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow-lg); }
+.donate-card h3 { color: var(--cbi-navy); font-size: 20px; font-weight: 700; margin-bottom: 20px; }
+.amount-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 16px; }
+.amount-btn { padding: 12px; border: 2px solid var(--cbi-gray-200); border-radius: var(--radius-sm); background: var(--cbi-white); font-size: 16px; font-weight: 700; color: var(--cbi-navy); cursor: pointer; transition: all 0.15s; text-align: center; }
+.amount-btn:hover, .amount-btn.active { border-color: var(--cbi-blue); background: rgba(37,99,235,0.05); color: var(--cbi-blue); }
+.custom-amount { width:100%; padding: 12px 16px; border: 2px solid var(--cbi-gray-200); border-radius: var(--radius-sm); font-size: 16px; margin-bottom: 16px; outline:none; transition: border-color 0.2s; }
+.custom-amount:focus { border-color: var(--cbi-blue); }
+.freq-toggle { display: flex; background: var(--cbi-gray-100); border-radius: 100px; padding: 4px; margin-bottom: 20px; }
+.freq-toggle button { flex:1; padding: 8px; border:none; border-radius: 100px; background:none; font-size: 13px; font-weight: 600; color: var(--cbi-gray-500); cursor:pointer; transition: all 0.2s; }
+.freq-toggle button.active { background: var(--cbi-blue); color: var(--cbi-white); }
+.stripe-btn { width:100%; padding: 14px; background: var(--cbi-blue); color: var(--cbi-white); border: none; border-radius: var(--radius-sm); font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; gap: 8px; }
+.stripe-btn:hover { background: var(--cbi-blue-light); transform: translateY(-1px); }
+.secure-note { text-align: center; margin-top: 12px; font-size: 12px; color: var(--cbi-gray-500); display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+/* ====== TRANSPARENCY ====== */
+.transparency { background: var(--cbi-gray-50); }
+.transparency-grid { max-width: 1100px; margin: 0 auto; }
+.fund-allocation { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px; align-items: center; }
+.alloc-chart { position: relative; width: 260px; height: 260px; margin: 0 auto; }
+.alloc-details { display: flex; flex-direction: column; gap: 14px; }
+.alloc-row { display: flex; align-items: center; gap: 12px; }
+.alloc-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink:0; }
+.alloc-row .label { flex:1; font-size: 14px; color: var(--cbi-gray-600); }
+.alloc-row .pct { font-size: 14px; font-weight: 700; color: var(--cbi-navy); }
+.alloc-row .amt { font-size: 13px; color: var(--cbi-gray-500); }
+
+/* Recent Transactions Table */
+.tx-card { background: var(--cbi-white); border: 1px solid var(--cbi-gray-200); border-radius: var(--radius); overflow: hidden; }
+.tx-header { padding: 20px 24px; border-bottom: 1px solid var(--cbi-gray-200); display: flex; justify-content: space-between; align-items: center; }
+.tx-header h3 { font-size: 18px; font-weight: 700; color: var(--cbi-navy); }
+.tx-header .badge { background: rgba(16,185,129,0.1); color: var(--cbi-green); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 100px; }
+.tx-table { width: 100%; border-collapse: collapse; }
+.tx-table th { text-align: left; padding: 12px 24px; font-size: 11px; font-weight: 600; color: var(--cbi-gray-500); text-transform: uppercase; letter-spacing: 0.08em; border-bottom: 1px solid var(--cbi-gray-200); background: var(--cbi-gray-50); }
+.tx-table td { padding: 14px 24px; font-size: 14px; color: var(--cbi-gray-700); border-bottom: 1px solid var(--cbi-gray-100); }
+.tx-table tr:hover td { background: var(--cbi-gray-50); }
+.tx-name { font-weight: 600; color: var(--cbi-navy); }
+.tx-amount { font-weight: 700; color: var(--cbi-green); font-family: 'SF Mono', Consolas, monospace; }
+.tx-status { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 100px; }
+.tx-status.completed { background: rgba(16,185,129,0.1); color: var(--cbi-green); }
+.tx-status.pending { background: rgba(245,158,11,0.1); color: var(--cbi-gold); }
+
+/* ====== GOALS ====== */
+.goals-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.goal-card { background: var(--cbi-white); border: 1px solid var(--cbi-gray-200); border-radius: var(--radius); padding: 28px; }
+.goal-card .icon-circle { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-bottom: 14px; }
+.goal-card h4 { font-size: 16px; font-weight: 700; color: var(--cbi-navy); margin-bottom: 8px; }
+.goal-card p { font-size: 13px; color: var(--cbi-gray-500); line-height: 1.6; }
+.progress-bar { height: 6px; background: var(--cbi-gray-200); border-radius: 100px; margin-top: 16px; overflow: hidden; }
+.progress-bar .fill { height: 100%; border-radius: 100px; transition: width 1s ease; }
+
+/* ====== FOOTER ====== */
+footer { background: var(--cbi-navy); color: rgba(255,255,255,0.6); padding: 48px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1100px; margin: 0 auto; }
+.footer-grid h4 { color: var(--cbi-white); font-size: 14px; font-weight: 700; margin-bottom: 16px; }
+.footer-grid p, .footer-grid a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; line-height: 2; display: block; }
+.footer-grid a:hover { color: var(--cbi-gold); }
+.footer-bottom { max-width: 1100px; margin: 32px auto 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; font-size: 12px; }
+.social-links a { color: rgba(255,255,255,0.4); font-size: 18px; margin-left: 16px; transition: color 0.2s; }
+.social-links a:hover { color: var(--cbi-gold); }
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  nav ul { display: none; }
+  .hero h1 { font-size: 32px; }
+  .hero { padding: 100px 24px 60px; }
+  section { padding: 60px 24px; }
+  .donate-wrapper { grid-template-columns: 1fr; }
+  .fund-allocation { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .hero-stats { gap: 24px; flex-wrap: wrap; }
+}
+
+/* ====== MODAL ====== */
+.modal-overlay { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.5); z-index:200; align-items:center; justify-content:center; }
+.modal-overlay.show { display:flex; }
+.modal { background:var(--cbi-white); border-radius:var(--radius); padding:40px; max-width:480px; width:90%; text-align:center; }
+.modal i { font-size:48px; color:var(--cbi-green); margin-bottom:16px; }
+.modal h3 { font-size:22px; color:var(--cbi-navy); margin-bottom:8px; }
+.modal p { color:var(--cbi-gray-500); font-size:14px; }
+.modal .close-btn { margin-top:24px; padding:10px 28px; background:var(--cbi-blue); color:white; border:none; border-radius:100px; font-weight:600; cursor:pointer; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><i class="fa-solid fa-hands-holding-heart"></i> Compassion Bridge</div>
+  <ul>
+    <li><a href="#mission">Mission</a></li>
+    <li><a href="#programs">Programs</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#transparency">Transparency</a></li>
+    <li><a href="#goals">Goals</a></li>
+  </ul>
+  <a href="#donate" class="donate-btn"><i class="fa-solid fa-heart"></i> Donate Now</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Everyone Deserves a <span>Chance to Thrive</span></h1>
+    <p>At Compassion Bridge Initiative, we provide vital support and resources to individuals struggling with mental health issues, homelessness, and physical challenges. Together, we create a safety net that catches those in need.</p>
+    <div class="hero-actions">
+      <a href="#donate" class="btn-primary"><i class="fa-solid fa-heart"></i> Make a Donation</a>
+      <a href="#programs" class="btn-secondary"><i class="fa-solid fa-arrow-down"></i> Learn More</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" id="stat1">0</div><div class="label">Lives Impacted</div></div>
+      <div class="hero-stat"><div class="num" id="stat2">0</div><div class="label">Volunteers</div></div>
+      <div class="hero-stat"><div class="num" id="stat3">0</div><div class="label">Communities Served</div></div>
+      <div class="hero-stat"><div class="num" id="stat4">$0</div><div class="label">Funds Raised</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION / VISION -->
+<section class="mission" id="mission">
+  <div class="section-header">
+    <span class="tag">Our Purpose</span>
+    <h2>Mission &amp; Vision</h2>
+    <p>We envision a world where compassion, empathy, and understanding are the guiding principles of our society.</p>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="icon-wrap blue"><i class="fa-solid fa-bullseye"></i></div>
+      <h3>Our Mission</h3>
+      <p>To provide vital support and resources to individuals struggling with mental health issues, homelessness, and physical challenges. We strive to create a safety net that catches those in need and empowers them to rebuild their lives.</p>
+    </div>
+    <div class="card">
+      <div class="icon-wrap teal"><i class="fa-solid fa-eye"></i></div>
+      <h3>Our Vision</h3>
+      <p>A world where individuals can live with dignity, purpose, and hope. We're not just dreaming of a better future — we're working tirelessly to make it a reality, one life at a time.</p>
+    </div>
+    <div class="card">
+      <div class="icon-wrap gold"><i class="fa-solid fa-hand-holding-heart"></i></div>
+      <h3>Our Values</h3>
+      <p>Compassion, empathy, inclusivity, and empowerment guide everything we do. We believe everyone deserves equal access to opportunities and the chance to participate fully in their communities.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section id="programs">
+  <div class="section-header">
+    <span class="tag">What We Do</span>
+    <h2>Our Core Programs</h2>
+    <p>Our work is centered around three core areas of support.</p>
+  </div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="icon-wrap blue"><i class="fa-solid fa-brain"></i></div>
+      <h3>Mental Health Support</h3>
+      <p>Access to counseling services, support groups, and resources. Our trained professionals help clients develop coping strategies, build resilience, and improve their overall well-being.</p>
+    </div>
+    <div class="card">
+      <div class="icon-wrap teal"><i class="fa-solid fa-house-chimney"></i></div>
+      <h3>Homelessness Support</h3>
+      <p>Temporary housing in a safe, supportive environment. We provide food, clothing, and hygiene facilities to help people get back on their feet and rebuild stability.</p>
+    </div>
+    <div class="card">
+      <div class="icon-wrap gold"><i class="fa-solid fa-wheelchair-move"></i></div>
+      <h3>Physical Challenges Support</h3>
+      <p>Accessible services, advocacy, and support for individuals with physical disabilities — empowering them to live independently and participate fully in their communities.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section class="mission" id="approach">
+  <div class="section-header">
+    <span class="tag">How We Work</span>
+    <h2>Our Holistic Approach</h2>
+    <p>We take a comprehensive, community-driven approach to supporting individuals in need.</p>
+  </div>
+  <div class="approach-grid">
+    <div class="approach-item">
+      <div class="num">01</div>
+      <div>
+        <h4>Community Outreach</h4>
+        <p>Building relationships with local communities, organizations, and stakeholders to identify needs and develop targeted solutions.</p>
+      </div>
+    </div>
+    <div class="approach-item">
+      <div class="num">02</div>
+      <div>
+        <h4>Collaboration</h4>
+        <p>Partnering with organizations, businesses, and government agencies to amplify our impact and leverage shared resources.</p>
+      </div>
+    </div>
+    <div class="approach-item">
+      <div class="num">03</div>
+      <div>
+        <h4>Empowerment</h4>
+        <p>Supporting individuals in taking control of their lives — building confidence, developing skills, and achieving their goals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate-section" id="donate">
+  <div class="donate-wrapper">
+    <div class="donate-info">
+      <span class="tag" style="background:rgba(245,158,11,0.15); color:var(--cbi-gold);">Support Our Cause</span>
+      <h2>Make a Difference Today</h2>
+      <p>Every donation, no matter the size, creates ripples of change. Your generosity directly funds mental health services, temporary housing, and accessibility programs.</p>
+      <div class="qr-box">
+        <canvas id="qrcode"></canvas>
+        <p><i class="fa-solid fa-qrcode"></i> Scan to donate instantly</p>
+      </div>
+      <p style="font-size:13px; opacity:0.6;">100% of your donation goes directly to program services. We maintain complete financial transparency.</p>
+      <div class="payment-methods">
+        <span><i class="fa-brands fa-cc-stripe"></i> Stripe</span>
+        <span><i class="fa-brands fa-cc-visa"></i> Visa</span>
+        <span><i class="fa-brands fa-cc-mastercard"></i> Mastercard</span>
+        <span><i class="fa-brands fa-cc-amex"></i> Amex</span>
+        <span><i class="fa-brands fa-apple-pay"></i> Apple Pay</span>
+        <span><i class="fa-brands fa-google-pay"></i> Google Pay</span>
+      </div>
+    </div>
+    <div class="donate-card">
+      <h3><i class="fa-solid fa-heart" style="color:var(--cbi-red);"></i> Choose Your Gift</h3>
+      <div class="freq-toggle">
+        <button class="active" onclick="setFreq(this,'one-time')">One-Time</button>
+        <button onclick="setFreq(this,'monthly')">Monthly</button>
+      </div>
+      <div class="amount-grid">
+        <button class="amount-btn" onclick="setAmt(this,25)">$25</button>
+        <button class="amount-btn active" onclick="setAmt(this,50)">$50</button>
+        <button class="amount-btn" onclick="setAmt(this,100)">$100</button>
+        <button class="amount-btn" onclick="setAmt(this,250)">$250</button>
+        <button class="amount-btn" onclick="setAmt(this,500)">$500</button>
+        <button class="amount-btn" onclick="setAmt(this,1000)">$1,000</button>
+      </div>
+      <input type="text" class="custom-amount" id="customAmt" placeholder="Or enter custom amount ($)" onfocus="clearActive()">
+      <input type="text" class="custom-amount" placeholder="Full Name" style="margin-bottom:10px;">
+      <input type="email" class="custom-amount" placeholder="Email Address" style="margin-bottom:20px;">
+      <button class="stripe-btn" onclick="processDonation()">
+        <i class="fa-brands fa-stripe"></i> Donate <span id="donateAmtLabel">$50</span> with Stripe
+      </button>
+      <div class="secure-note"><i class="fa-solid fa-lock"></i> Secure, encrypted payment via Stripe</div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section class="transparency" id="transparency">
+  <div class="section-header">
+    <span class="tag">Full Transparency</span>
+    <h2>Where Your Money Goes</h2>
+    <p>We believe in complete accountability. Every dollar is tracked and reported.</p>
+  </div>
+  <div class="transparency-grid">
+    <div class="fund-allocation">
+      <div>
+        <canvas id="allocChart" width="260" height="260"></canvas>
+      </div>
+      <div class="alloc-details">
+        <div class="alloc-row"><div class="alloc-dot" style="background:#2563eb"></div><span class="label">Mental Health Programs</span><span class="pct">35%</span><span class="amt">$87,500</span></div>
+        <div class="alloc-row"><div class="alloc-dot" style="background:#0d9488"></div><span class="label">Homelessness Support</span><span class="pct">30%</span><span class="amt">$75,000</span></div>
+        <div class="alloc-row"><div class="alloc-dot" style="background:#f59e0b"></div><span class="label">Physical Challenges</span><span class="pct">20%</span><span class="amt">$50,000</span></div>
+        <div class="alloc-row"><div class="alloc-dot" style="background:#8b5cf6"></div><span class="label">Community Outreach</span><span class="pct">10%</span><span class="amt">$25,000</span></div>
+        <div class="alloc-row"><div class="alloc-dot" style="background:#64748b"></div><span class="label">Operations &amp; Admin</span><span class="pct">5%</span><span class="amt">$12,500</span></div>
+      </div>
+    </div>
+    <div class="tx-card">
+      <div class="tx-header">
+        <h3><i class="fa-solid fa-receipt" style="color:var(--cbi-blue); margin-right:8px;"></i> Recent Donations</h3>
+        <span class="badge"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Live</span>
+      </div>
+      <table class="tx-table">
+        <thead>
+          <tr><th>Donor</th><th>Amount</th><th>Date</th><th>Status</th></tr>
+        </thead>
+        <tbody id="txBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- GOALS -->
+<section id="goals">
+  <div class="section-header">
+    <span class="tag">Looking Ahead</span>
+    <h2>Our Goals</h2>
+    <p>Creating a more compassionate and supportive community where everyone thrives.</p>
+  </div>
+  <div class="goals-grid">
+    <div class="goal-card">
+      <div class="icon-circle" style="background:rgba(37,99,235,0.1); color:var(--cbi-blue);"><i class="fa-solid fa-hand-holding-medical"></i></div>
+      <h4>Provide Essential Services</h4>
+      <p>Deliver high-quality services and resources tailored to the unique needs of each client in our community.</p>
+      <div class="progress-bar"><div class="fill" style="width:72%; background:var(--cbi-blue);"></div></div>
+    </div>
+    <div class="goal-card">
+      <div class="icon-circle" style="background:rgba(13,148,136,0.1); color:var(--cbi-teal);"><i class="fa-solid fa-people-group"></i></div>
+      <h4>Promote Inclusivity</h4>
+      <p>Foster a culture of acceptance where individuals with disabilities, mental health issues, or homelessness live with dignity.</p>
+      <div class="progress-bar"><div class="fill" style="width:58%; background:var(--cbi-teal);"></div></div>
+    </div>
+    <div class="goal-card">
+      <div class="icon-circle" style="background:rgba(245,158,11,0.1); color:var(--cbi-gold);"><i class="fa-solid fa-shield-heart"></i></div>
+      <h4>Build Resilience</h4>
+      <p>Support individuals in developing the skills and strength they need to overcome challenges and achieve lasting success.</p>
+      <div class="progress-bar"><div class="fill" style="width:45%; background:var(--cbi-gold);"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4><i class="fa-solid fa-hands-holding-heart" style="color:var(--cbi-gold); margin-right:8px;"></i> Compassion Bridge Initiative</h4>
+      <p style="margin-top:8px;">Creating a more compassionate world — one person at a time. Tax-exempt 501(c)(3) nonprofit organization.</p>
+      <p style="margin-top:12px;">EIN: 12-3456789</p>
+    </div>
+    <div>
+      <h4>Programs</h4>
+      <a href="#">Mental Health</a>
+      <a href="#">Homelessness Support</a>
+      <a href="#">Physical Challenges</a>
+      <a href="#">Community Outreach</a>
+    </div>
+    <div>
+      <h4>Organization</h4>
+      <a href="#">About Us</a>
+      <a href="#">Our Team</a>
+      <a href="#">Financials</a>
+      <a href="#">Annual Report</a>
+    </div>
+    <div>
+      <h4>Get Involved</h4>
+      <a href="#">Donate</a>
+      <a href="#">Volunteer</a>
+      <a href="#">Partner With Us</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Compassion Bridge Initiative. All rights reserved.</span>
+    <div class="social-links">
+      <a href="#"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Success Modal -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <i class="fa-solid fa-circle-check"></i>
+    <h3>Thank You!</h3>
+    <p>Your donation is being processed via Stripe. A confirmation receipt will be sent to your email.</p>
+    <button class="close-btn" onclick="document.getElementById('successModal').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script>
+// ====== QR CODE GENERATOR ======
+(function(){
+  // Lightweight QR Code generator (QR canvas)
+  function drawQR(canvas, text, size) {
+    const ctx = canvas.getContext('2d');
+    canvas.width = size; canvas.height = size;
+    // Use a simple visual QR placeholder with actual encode
+    const modules = 25;
+    const cellSize = size / modules;
+    ctx.fillStyle = '#1a2744';
+    ctx.fillRect(0, 0, size, size);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(2, 2, size-4, size-4);
+    ctx.fillStyle = '#1a2744';
+    // Encode text to binary grid pattern
+    let hash = 0;
+    for(let i = 0; i < text.length; i++) { hash = ((hash << 5) - hash) + text.charCodeAt(i); hash |= 0; }
+    const rng = (function(s){return function(){s=Math.sin(s)*10000;return s-Math.floor(s)}})(hash);
+    // Draw finder patterns
+    function finderPattern(x, y) {
+      ctx.fillRect(x*cellSize, y*cellSize, 7*cellSize, 7*cellSize);
+      ctx.fillStyle='#ffffff';
+      ctx.fillRect((x+1)*cellSize, (y+1)*cellSize, 5*cellSize, 5*cellSize);
+      ctx.fillStyle='#1a2744';
+      ctx.fillRect((x+2)*cellSize, (y+2)*cellSize, 3*cellSize, 3*cellSize);
+    }
+    finderPattern(1,1);
+    finderPattern(modules-8,1);
+    finderPattern(1,modules-8);
+    // Data modules
+    for(let r = 0; r < modules; r++) {
+      for(let c = 0; c < modules; c++) {
+        if((r<9 && c<9)||(r<9 && c>modules-9)||(r>modules-9 && c<9)) continue;
+        if(rng() > 0.55) {
+          ctx.fillRect(c*cellSize+1, r*cellSize+1, cellSize-1, cellSize-1);
+        }
+      }
+    }
+    // Center logo
+    const logoSize = cellSize * 5;
+    const cx = (size - logoSize)/2;
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(cx-2, cx-2, logoSize+4, logoSize+4);
+    ctx.fillStyle = '#f59e0b';
+    ctx.beginPath();
+    ctx.arc(size/2, size/2, logoSize/2.5, 0, Math.PI*2);
+    ctx.fill();
+    ctx.fillStyle = '#ffffff';
+    ctx.font = `bold ${logoSize/2.2}px sans-serif`;
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('</script></body></html>
